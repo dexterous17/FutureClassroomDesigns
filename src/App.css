@@ -1,33 +1,53 @@
-.slider {
+.Login{
   position: relative;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  background-color: gainsboro;
 }
 
-.image {
-  width: 1000px;
-  height: 600px;
+.Login-box{
+  background-color: white;
+  padding: 10px;
   border-radius: 10px;
 }
 
-.right-arrow {
-  position: absolute;
-  top: 50%;
-  right: 32px;
-  font-size: 3rem;
-  color: #000;
-  z-index: 10;
-  cursor: pointer;
-  user-select: none;
+.slider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 100vh;
 }
 
 .left-arrow {
-  position: absolute;
-  top: 50%;
-  left: 32px;
-  font-size: 3rem;
+  flex: 1;
+  flex-grow: 1;
+  font-size: 50px;
+  color: black;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid khaki;
+}
+
+.image { 
+  flex: 2;
+  flex-grow: 2;
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+  border-radius: 10%;
+}
+
+.right-arrow {
+  border: 1px solid khaki;
+  flex:3;
+  flex-grow: 1;
+  font-size: 50px;
   color: #000;
   z-index: 10;
   cursor: pointer;
@@ -40,6 +60,7 @@
 }
 
 .slide.active {
+  display: flex;
   opacity: 1;
   transition-duration: 1s;
   transform: scale(1.08);
