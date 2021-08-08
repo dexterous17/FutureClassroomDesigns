@@ -65,3 +65,12 @@
   transition-duration: 1s;
   transform: scale(1.08);
 }
+
+.rating-container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}

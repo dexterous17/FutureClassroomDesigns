@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { SliderData } from './SliderData';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
+import { useHistory } from 'react-router-dom';
 
 const ImageSlider = () => {
   const [current, setCurrent] = useState(0);
   const length = SliderData.length;
+  const history = useHistory();
 
   const nextSlide = () => {
     if(current+2<=length){
       setCurrent(current + 1);  
     }else{
-      alert('HEllo')
+      history.push('/Rating');
     }
   };
 
@@ -39,6 +41,8 @@ const ImageSlider = () => {
         );
       })}
       <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide} />
+
+
     </section>
   );
 };

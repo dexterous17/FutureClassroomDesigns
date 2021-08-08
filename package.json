@@ -10,8 +10,13 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.1.0",
+    "react-rating-stars-component": "^2.2.0",
+    "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "react-simple-star-rating": "^3.0.0",
+    "react-star-rating": "^1.4.2",
+    "redux": "^4.1.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

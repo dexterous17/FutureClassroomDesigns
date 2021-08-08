@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
+import { useHistory } from "react-router-dom";
+import { ENTERTHENAME } from '../redux store/Action';
+import {useSelector,useDispatch} from 'react-redux'
 
 export default function Login() {
+    const history =  useHistory();
+    const dispatch = useDispatch();
     const [name,setname] =useState('')
+    
 
     function type(val){
             console.log(val.target.value)
@@ -12,11 +18,11 @@ export default function Login() {
         if(name===''){
             alert('Please Enter Your Name')
         }else{
-            alert(name)
+            dispatch(ENTERTHENAME(name))
+            history.push('/Images')
         }
 
     }
-
     return (
         <div className="Login">
             <div className="Login-box">
