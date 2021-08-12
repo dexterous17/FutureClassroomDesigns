@@ -1,6 +1,6 @@
 export const ENTERTHENAME = (data) =>{
     return{
-        type:'Entername',
+        type:'ENTERTHENAME',
         payload:data
     };
 };
@@ -16,6 +16,13 @@ export const RATETHEPROJECT = (data) =>{
 export const NEXTPROJECT = (data) =>{
     return{
         type:"NextProject",
+        payload:data
+    }
+}
+
+export const ENTERTHEGROUP = (data) =>{
+    return{
+        type:"ENTERTHEGROUP",
         payload:data
     }
 }

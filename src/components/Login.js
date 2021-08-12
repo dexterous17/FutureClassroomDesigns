@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import { useHistory } from "react-router-dom";
-import { ENTERTHENAME } from '../redux store/Action';
-import {useSelector,useDispatch} from 'react-redux'
+import { ENTERTHENAME} from '../redux store/Action';
+import {useDispatch} from 'react-redux'
 
 export default function Login() {
     const history =  useHistory();
     const dispatch = useDispatch();
     const [name,setname] =useState('')
     
+    
 
     function type(val){
-            console.log(val.target.value)
             setname(val.target.value)
     }
 
@@ -19,7 +19,7 @@ export default function Login() {
             alert('Please Enter Your Name')
         }else{
             dispatch(ENTERTHENAME(name))
-            history.push('/Images')
+            history.push(`/Images/1&${name}`)
         }
 
     }

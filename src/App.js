@@ -7,18 +7,22 @@ import StarRatings  from './components/StarRatings';
 
 
 function App() {
+
+  console.log(process.env.REACT_APP_STORAGE_BUCKET)
+
   return (
     <Router>
         <Switch>
           <Route exact path="/">
             <Login/>
           </Route>
-          <Route path="/Images">
+          <Route path="/Images/:id&:name">
             <ImageSlider/>
           </Route>
-          <Route path="/Rating">
+          <Route path="/Rating/:id&:name">
             <StarRatings/>
           </Route>
+          <Route component={() => (<div>404 Not found </div>)} />
         </Switch>
     </Router>
   );

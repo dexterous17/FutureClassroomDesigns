@@ -1,17 +1,27 @@
 const initialState = {
-    Name:null
+    Name:null,
+    GroupId:null,
+    GroupName:null
 }
 
 const Reducer = (state = initialState,action) => {
     switch(action.type){
-        case 'Entername':
+        case 'ENTERTHENAME':
             return {
                 ...state,
                 Name:action.payload
             }
-        case 'RatethePhoto':
+        case 'RATETHE':
             
             return {...state};
+
+        case 'ENTERTHEGROUP':
+            return {
+                ...state,
+                GroupId:action.payload
+            }
+
+        
         case 'NextProject':
             return{...state};
 
