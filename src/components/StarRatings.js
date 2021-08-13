@@ -6,25 +6,30 @@ import { db,storage } from '../firebase';
 
 
 export default function StarRatings() {
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(null);
   const history = useHistory();
   const params = useParams();
   const [comment,setComment] = useState('');
   const [prefixesLength,setprefixesLength] = useState(0);
-
+  const [message,setMessage]= useState('');
   const handleRating = (rate) => {
     setRating(rate)
-    async function sleep (){return await new Promise(r => setTimeout(r, 5000));}
-    sleep();
+  }
+
+  function Submit(){
+   
+    if(rating===null){
+      setMessage('Please select rating!')
+      return 
+    }
+   
     var database = db.collection('Groups')
     database.add({
       id:params.id,
       name:params.name,
-      rating:rate,
+      rating:rating,
       comment:comment
     }).catch(error=>console.log(error))
-
-
 
     if(prefixesLength-params.id===0){
       return window.open('https://www.supertecture.com/')
@@ -32,7 +37,6 @@ export default function StarRatings() {
       return (history.push(`/Images/${parseInt(params.id, 10)+1}&${params.name}`));
     }
 
-    
   }
 
   useEffect(()=>{
@@ -60,6 +64,10 @@ export default function StarRatings() {
               </svg>
             </Rating>  
           </div>  
+          <div style={{color:'red'}}>
+            {message}
+          </div>
+          <button onClick={Submit}>Submit</button>
       </div>
   )
 }
