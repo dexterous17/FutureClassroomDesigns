@@ -19,7 +19,7 @@ export default function Login() {
             alert('Please Enter Your Name')
         }else{
             dispatch(ENTERTHENAME(name))
-            history.push(`/Images/1&${name}`)
+            history.push(`/Images/0&${name}`)
         }
 
     }

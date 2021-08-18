@@ -7,9 +7,6 @@ import StarRatings  from './components/StarRatings';
 
 
 function App() {
-
-  console.log(process.env.REACT_APP_STORAGE_BUCKET)
-
   return (
     <Router>
         <Switch>

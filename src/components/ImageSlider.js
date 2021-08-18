@@ -17,7 +17,7 @@ const ImageSlider = () => {
 
 useEffect(() => {
   async function asynccall(){
-    
+    //async function will request  images from the storage buckets.
       var path = await storage.ref().child(`${params.id}`).listAll().then((res)=>{
         res.items.forEach((item)=>{
             item.getDownloadURL().then((url)=>{
@@ -35,6 +35,7 @@ const length = url.length;
 console.log(length)
 
 const nextSlide = (e) => {
+  // function will call next slide.
     e.preventDefault();  
     if(current<=length-2){
       setCurrent(current + 1);  
@@ -44,11 +45,13 @@ const nextSlide = (e) => {
   };
 
   const prevSlide = (e) => {
+    // function will call previous slide.
     e.preventDefault();
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
 
   if (!Array.isArray(url) || url.length <= 0) {
+    //if statement will check wether the array is empty.
     return null;
   }
 

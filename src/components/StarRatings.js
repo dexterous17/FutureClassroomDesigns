@@ -13,24 +13,24 @@ export default function StarRatings() {
   const [prefixesLength,setprefixesLength] = useState(0);
   const [message,setMessage]= useState('');
   const handleRating = (rate) => {
+    //Setting the rate
     setRating(rate)
   }
 
-  function Submit(){
+  async function Submit(){
    
     if(rating===null){
+      //message if no rateing is found
       setMessage('Please select rating!')
       return 
     }
    
-    var database = db.collection('Groups')
-    database.add({
-      id:params.id,
-      name:params.name,
-      rating:rating,
-      comment:comment
-    }).catch(error=>console.log(error))
+    //If rating if found then will send to database
+    var database = await db.collection('Groups').doc('Jury').collection(params.name)
+    database.add({id:params.id,rating:rating,
+      comment:comment}).catch(error=>console.log(error))
 
+    //if statement for sending the user to other website or next slide.
     if(prefixesLength-params.id===0){
       return window.open('https://www.supertecture.com/')
     }else{
@@ -40,6 +40,7 @@ export default function StarRatings() {
   }
 
   useEffect(()=>{
+    //Code to get the list of all the folder from the bucket.
     async function hello(){
       var path = await storage.ref().child('').listAll().then((res)=>{
         return setprefixesLength(res.prefixes.length);
@@ -50,6 +51,7 @@ export default function StarRatings() {
   },[])
 
   function type(val){
+    //Code for inputing the value.
     setComment(val.target.value)
   }
 
