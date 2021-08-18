@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useHistory,useParams } from 'react-router-dom';
 import {Rating} from 'react-simple-star-rating'
 import { db,storage } from '../firebase';
+import ReactPaginate  from 'react-paginate';
 
 
 
@@ -55,8 +56,34 @@ export default function StarRatings() {
     setComment(val.target.value)
   }
 
+  function handlePageClick(event){
+     //if statement for sending the user to other website or next slide.
+     console.log(event.selected)
+     if(prefixesLength-params.id===0){
+      return window.open('https://www.supertecture.com/')
+    }else{
+      return (history.push(`/Images/${event.selected+1}&${params.name}`));
+    }
+
+  } 
+
+
+
   return (
       <div className="rating-container">
+          <ReactPaginate
+              previousLabel={'<'}
+              nextLabel={'>'}
+              breakLabel={'...'}
+              breakClassName={'break-me'}
+              forcePage={parseInt(params.id, 10)-1}
+              pageCount={prefixesLength-1}
+              marginPagesDisplayed={2}
+              pageRangeDisplayed={5}
+              onPageChange={handlePageClick}
+              containerClassName={'pagination'}
+              activeClassName={'active'}
+        />
         <div><h1>Rating Group Number {params.id}</h1></div>
         <textarea rows="10" cols="35" placeholder="Post your comment here..." onChange={type}></textarea>  
           <div>
