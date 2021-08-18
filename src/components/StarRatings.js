@@ -58,7 +58,7 @@ export default function StarRatings() {
   return (
       <div className="rating-container">
         <div><h1>Rating Group Number {params.id}</h1></div>
-        <textarea rows="10" cols="35" placeholder="" onChange={type}></textarea>  
+        <textarea rows="10" cols="35" placeholder="Post your comment here..." onChange={type}></textarea>  
           <div>
             <Rating onClick={handleRating} ratingValue={rating} transition size={28} stars={10}>
               <svg fill="currentColor" width={40} height={30} viewBox="0 0 24 24">
