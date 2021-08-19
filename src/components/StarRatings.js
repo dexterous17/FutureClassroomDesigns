@@ -43,6 +43,11 @@ export default function StarRatings() {
   }
 
   useEffect(()=>{
+
+    if(parseInt(params.id)<1||parseInt(params.id)>71){
+      history.push(`/`)
+    }
+
     //Code to get the list of all the folder from the bucket.
     async function hello(){
       var path = await storage.ref().child('').listAll().then((res)=>{

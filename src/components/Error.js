@@ -2,7 +2,7 @@ import React from 'react'
 
 function Error() {
     return (
-        <div style={{}}>
+        <div className="">
             Page Not Found Error:404
         </div>
     )

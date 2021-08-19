@@ -13,6 +13,9 @@ const ImageSlider = () => {
 
 useEffect(() => {
 
+  if(parseInt(params.id)<1||parseInt(params.id)>71){
+      history.push(`/`)
+  }
 
   async function asynccall(){
     //async function will request  images from the storage buckets.
