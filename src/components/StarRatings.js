@@ -13,6 +13,8 @@ export default function StarRatings() {
   const [comment,setComment] = useState('');
   const [prefixesLength,setprefixesLength] = useState(0);
   const [message,setMessage]= useState('');
+
+  
   const handleRating = (rate) => {
     //Setting the rate
     setRating(rate)
@@ -33,7 +35,7 @@ export default function StarRatings() {
 
     //if statement for sending the user to other website or next slide.
     if(prefixesLength-params.id===0){
-      return window.open('https://www.supertecture.com/')
+       window.location.assign('https://www.supertecture.com');
     }else{
       return (history.push(`/Images/${parseInt(params.id, 10)+1}&${params.name}`));
     }
@@ -58,12 +60,8 @@ export default function StarRatings() {
 
   function handlePageClick(event){
      //if statement for sending the user to other website or next slide.
-     console.log(event.selected)
-     if(prefixesLength-params.id===0){
-      return window.open('https://www.supertecture.com/')
-    }else{
-      return (history.push(`/Images/${event.selected+1}&${params.name}`));
-    }
+     console.log(event.selected+1)
+     history.push(`/Images/${event.selected+1}&${params.name}`)
 
   } 
 
@@ -77,7 +75,7 @@ export default function StarRatings() {
               breakLabel={'...'}
               breakClassName={'break-me'}
               forcePage={parseInt(params.id, 10)-1}
-              pageCount={prefixesLength-1}
+              pageCount={prefixesLength}
               marginPagesDisplayed={2}
               pageRangeDisplayed={5}
               onPageChange={handlePageClick}

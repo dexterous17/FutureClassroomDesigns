@@ -1,21 +1,19 @@
 import React, { useState,useEffect } from 'react';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 import { useHistory,useParams } from 'react-router-dom';
-import { ENTERTHEGROUP, ENTERTHENAME } from '../redux store/Action';
-import {useDispatch} from 'react-redux'
+
 import { storage } from '../firebase';
 
 const ImageSlider = () => {
   const [current, setCurrent] = useState(0);
   const history = useHistory();
   const params = useParams();
-  const dispatch = useDispatch();
   const [url,seturl] = useState([]);
 
-  dispatch(ENTERTHENAME(params.name))
-  dispatch(ENTERTHEGROUP(params.id))
 
 useEffect(() => {
+
+
   async function asynccall(){
     //async function will request  images from the storage buckets.
       var path = await storage.ref().child(`${params.id}`).listAll().then((res)=>{
@@ -32,7 +30,6 @@ useEffect(() => {
 }, [])
 
 const length = url.length;
-console.log(length)
 
 const nextSlide = (e) => {
   // function will call next slide.
