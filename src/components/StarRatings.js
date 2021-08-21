@@ -29,8 +29,8 @@ export default function StarRatings() {
     }
    
     //If rating if found then will send to database
-    var database = await db.collection('Groups').doc('Jury').collection(params.name)
-    database.add({id:params.id,rating:rating,
+    var database = await db.collection(params.name).doc(params.id)
+    database.set({id:params.id,rating:rating,
       comment:comment}).catch(error=>console.log(error))
 
     //if statement for sending the user to other website or next slide.

@@ -5,9 +5,22 @@
   align-items: center;
   height: 100vh;
   background-color: gainsboro;
+  flex-direction: column;
+  object-fit: contain;
 }
 
-.Login-box{
+.Login > .loginimage{
+  display: flex;
+  width: auto;
+  height: 300px;
+}
+
+.Login > .loginimage > img{
+  width: 100%;
+  height: 100%;
+}
+
+.Login > .Login-box{
   background-color: white;
   padding: 10px;
   border-radius: 10px;

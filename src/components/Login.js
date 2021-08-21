@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from "react-router-dom";
-
+import loginimage from '../assets/images/welcome_jury.jpg'
 export default function Login() {
     const history =  useHistory();
     const [name,setname] =useState('')
@@ -21,6 +21,9 @@ export default function Login() {
     }
     return (
         <div className="Login">
+            <div className="loginimage">
+                    <img src={loginimage}></img>
+            </div>
             <div className="Login-box">
                 <table>
                     <tbody>     

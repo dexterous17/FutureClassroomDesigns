@@ -66,7 +66,7 @@ const nextSlide = (e) => {
             key={index}
           >
             {index === current && (
-              <img src={slide} alt={'travel'} className='image' />
+              <img src={slide} alt={'Slides'} className='image' />
             )}
           </div>
         );
