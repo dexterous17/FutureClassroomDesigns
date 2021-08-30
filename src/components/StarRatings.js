@@ -87,7 +87,7 @@ export default function StarRatings() {
               containerClassName={'pagination'}
               activeClassName={'active'}
         />
-        <div><h1>Rating Group Number {params.id}</h1></div>
+        <div><h1>Rating Group {params.id}</h1></div>
         <textarea rows="10" cols="35" placeholder="Post your comment here..." onChange={type}></textarea>  
           <div>
             <Rating onClick={handleRating} ratingValue={rating} transition size={28} stars={10}>
