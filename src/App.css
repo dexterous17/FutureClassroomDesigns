@@ -85,6 +85,12 @@
   height: 100vh;
 }
 
+.pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .pagination>ul {
   display: inline-block;
   padding-left: 10px;
@@ -95,9 +101,9 @@
   display: inline-block;
   padding-left: 10px;
   padding-right: 10px;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
   padding: 0;
   text-align: center;
   cursor: pointer;
@@ -115,4 +121,17 @@
     width: 100%;
     height: 100%;
   }
+
+  .pagination>li {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0;
+    text-align: center;
+    cursor: pointer;
+  }
+
 }
