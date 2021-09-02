@@ -24,6 +24,10 @@
   background-color: white;
 }
 
+input[type='number']{
+  width: 80px;
+} 
+
 .slider {
   position: relative;
   display: flex;
