@@ -58,7 +58,7 @@ export default function Login() {
                     </tbody>
                 </table>
             </div>
-            Note: Only add the number if you want to jump to a particular number
+            Note: Only add the number if you want to jump to a particular number otherwise please leave it blank.
         </div>
     )
 }
